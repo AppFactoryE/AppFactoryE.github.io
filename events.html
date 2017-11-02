@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">    
+
+        <link rel="manifest" href="/manifest.json">
+          <!-- Android  -->
+		  <meta name="theme-color" content="blue">
+		  <meta name="mobile-web-app-capable" content="yes">
+		  <meta name="mobile-web-app-capable" content="Ericsson Events">
+		
+		  <!-- Android  -->
+		  <link href="images/icons/icon-192x192.png" rel="icon" sizes="192x192">
+		  <link href="images/icons/icon-128x128.png" rel="icon" sizes="128x128">
+         <!-- Add to home screen for Safari on iOS -->
+	      <meta name="apple-mobile-web-app-capable" content="yes">
+	      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	      <meta name="apple-mobile-web-app-title" content="Ericsson Events">
+	      <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+	      <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+	      <meta name="msapplication-TileColor" content="#2F3BA2">   
+        <!-- PWA End -->
+        <link rel = "stylesheet" type="text/css" href = "css/bootstrap.min.css" >
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <title>Ericsson Internal</title>
+        <script src = "libs/jquery.min.js"></script>  
+        <script src = "libs/bootstrap.js"></script>
+        <script src = "libs/angular.min.js"></script>
+        <script src = "libs/angular-route.min.js"></script>      
+        <!-- <script src = "libs/service-worker.js"></script> -->
+        <script src = "js/app.js"></script>
+</head>
+<body class="events" ng-app="ei_events" ng-view ng-controller="ei_eventsController">
+	<h1></h1>
+	<header>
+			<ul>
+				<li></li>
+				<li>EVENTS</li>
+				<li class="col-xs-6 col-md-6"><input type="search" name="search" placeholder="Search with the New Global Search Tool...." ng-model="searchEvents.e1"></li>
+			</ul>
+	</header>
+	<section>
+	<aside class="col-xs-12 col-md-3 deskView">
+		<ul>
+			<li class="col-md-12">
+		      <p >All</p>
+		      <p >(19)</p>
+		    </li>
+		    <li class="col-md-12">
+		      <p >Customer event</p>
+		      <p >(6)</p>
+		    </li>
+		    <li class="col-md-12">
+		      <p >Internal</p>
+		      <p >(9)</p>
+		    </li>
+		    <li class="col-md-12">
+		      <p >Public</p>
+		      <p >(4)</p>
+		    </li>
+		</ul>		
+	</aside>
+	<article class="col-xs-12 col-md-9">
+		<div col-md-12>
+			<div>
+				<span>showing</span><label>All</label><img src="images/plus.png"><img src="images/close.png">
+			</div>
+			<div>
+				<label>Any time</label><img src="images/rss.png">
+			</div>
+		</div>
+		<div class="col-md-12 deskView">
+			<dl>
+				<span ng-click="prClk()">&#60</span><span ng-click="nxClk()">&#62</span><label>{{yr}}</label>
+			</dl>
+			<dl>
+				<ul ng-repeat="cal in calData" ng-class="{active : calMobCurrData === cal}" class="blackBg">
+					<li ng-click="calClk(cal)">
+						{{cal.Month}}
+					</li>
+				</ul>
+			</dl>
+		</div>
+		<div>
+		<ul class="mobView">
+		 <div class="dropdown">
+    		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">&equiv;</button>
+		    <ul class="dropdown-menu">
+		      <li class="col-md-12">
+		      <p >All</p>
+		      <p >19</p>
+		    </li>
+		    <li class="col-md-12">
+		      <p >Customer event</p>
+		      <p >6</p>
+		    </li>
+		    <li class="col-md-12">
+		      <p >Internal</p>
+		      <p >9</p>
+		    </li>
+		    <li class="col-md-12">
+		      <p >Public</p>
+		      <p >4</p>
+		    	</li>
+		    </ul>
+  		 </div>
+  		</ul> 
+  		</div>
+		<div class="col-md-12 mobView">
+			<dl>
+				<span ng-click="prevClk()">&#60</span><label>{{calMobCurrData.Month}} {{yr}}</label><span ng-click="nextClk()">&#62</span>
+			</dl>
+		</div>
+		<h3 class="col-md-12 deskView">
+			{{calMobCurrData.Month}} {{yr}}
+		</h3>
+		<h3 class="col-md-12 mobView">
+			{{calMobCurrData.Month}} {{yr}}
+		</h3>
+		<ul class="deskView col-xs-12 col-md-12 blueClr" ng-repeat="d in data.events | filter: searchEvents">
+		     <li>
+		     	  <img src="images/s1.png">   
+		    </li>
+		     <li>
+		    	<b>{{d.e1}}  </b>
+		    	<span class="blackClr">Host:</span> <span>{{d.e5}}</span>
+		    </li>
+		    <li>
+		     	{{d.e2}}      
+		    </li>
+		    <li class="blackClr">
+		    {{d.e3}}  	 	     
+		    </li>
+		    <li>
+		    {{d.e4}}   		     
+		    </li>
+		    <li>
+		     <span class="blackClr">Host:</span> <span>{{d.e5}}</span>
+		    </li>
+		    <li>
+		     	     
+		    </li>	    
+		</ul>
+		<ul class="mobView col-xs-12 col-md-12 blueClr" ng-repeat="d in data.events | filter: searchEvents">			
+		     <li>
+		     	  <img src="images/s2.png">   
+		    </li>
+		    <div>
+		     	<li>
+		    		<b>{{d.e1}}</b>		    	
+		    	</li>		    
+			    <li>
+			     	{{d.e2}}      
+			    </li>		   		    
+			    <li>
+			     <span class="blackClr">Host:</span> <span>{{d.e5}}</span>
+			    </li>
+			     <li>
+			   		 <span class="blackClr">{{d.e3}}</span> <span>{{d.e4}}</span>     
+			    </li>	
+		    </div>	    	    
+		</ul>
+	</article>
+	</section>
+	<footer>
+		<!-- <ul>
+			<li><img src="images/i1i.png"></li>
+			<li><img src="images/i2i.png"></li>
+			<li><img src="images/i3i.png"></li>
+			<li><img src="images/i4i.png"></li>
+		</ul> -->
+		<div>
+			<ul>
+				<li>Support and Compliance Reporting</li>
+				<li>Employee Service</li>
+				<li>My Support</li>
+				<li>IT Support 24/7</li>
+				<li>Reporting Compliance Concerns</li>
+				<li>Reporting Evironmental, Health and Safety Incidents</li>
+			</ul>
+		</div>
+		<div>
+			<ul>
+				<li>HR Support - HR Direct</li>
+				<li><select><option selected="selected">Choose Loaction</option></select> <button>GO</button></li>
+				<li>Contact us with external phone</li>				
+			</ul>
+		</div>
+		<div>
+			<ul>
+				<li>Security support</li>
+				<li class="blackClr">Emergency: +46 8 24 10 10</li>
+				<li>Country and Security Information</li>
+				<li>Reporting Security Incidents</li>
+			</ul>
+		</div>
+		<div >
+			<ul>
+				<li>Others sites</li>
+				<li>Ericsson.com</li>
+				<li>Extranet</li>
+				<li>The Networked Society Blog</li>
+			</ul>
+		</div>
+	</footer>
+</body>
+</html>

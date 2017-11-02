@@ -1,0 +1,410 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: myFirstFont;
+    overflow-x: hidden;
+}
+ul{
+    padding: 0;
+}
+ul li{
+    list-style: none;
+}
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+}
+a{
+    color: #002261;
+}
+a:focus, a:hover{
+    text-decoration: none;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+input::-webkit-input-placeholder { 
+    font-size: 12px;
+}
+@font-face {
+    font-family: myFirstFont;
+    src: url(EricsSans-Regular.otf);
+}
+@font-face {
+    font-family: EricssonCapital;
+    src: url(EricssonCapital.otf);
+}
+@font-face {
+    font-family: EricFontMedium;
+    src: url(EricsSans-Medium.otf);
+}
+h1{
+    background: url('../images/line_eric.png') no-repeat center;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 1%;
+    margin: 0;
+}
+.events header{
+    box-shadow: 0px 0px 5px #b1b3b4;
+    width: 100%;
+    height: 85px;
+}
+.events header ul{
+    width: 100%;
+    margin: 0;
+    padding: 2%;
+}
+.events header ul li{
+    font-size: xx-large;
+    display: inline-block;
+    vertical-align: middle;
+}
+.events header ul li:first-child{
+    background: url('../images/ericIcon.png') no-repeat center;
+    background-size: 100% 100%;
+    width: 25px;
+    height: 35px;
+    margin: 0 10px 0 0;
+}
+.events header ul li:nth-child(2){
+    font-family: EricssonCapital;  
+    color: #2e4275; 
+}
+.events header ul li:last-child{
+    float: right;
+}
+.events header ul li:last-child input{
+    background: url('../images/search.png') no-repeat center;
+    background-size: 30px;
+    background-position: 100% 0;
+    width: 100%;
+    font-size: 16px;
+    height: 35px;
+    padding: 2px 30px 2px 5%;
+    line-height: 40px;  
+    border: 1px solid #e2e2e2;
+    vertical-align: middle; 
+}
+section{
+    padding: 2% 3%;
+    width: 100%;
+    height: 65%;
+    overflow: scroll;
+}
+aside{
+    font-size: 12px;
+}
+aside ul li{
+    background: url('../images/arrow.png') no-repeat center;
+    background-size: 25px 20px;
+    background-position: -10px -1px;
+}
+aside p{
+    display: inline-block;
+}
+article{
+    font-size: 14px;
+}
+article h3{
+    background: #e2e1e1;
+    margin: 5px 0;
+    padding: 1%;
+    border-bottom: 1px solid #c2c2c2;
+    float: left;
+    width: 100%;
+    height: 35px;
+    font-size: 18px;
+}
+article > ul li{
+    display: inline-block;
+    padding: 5px;
+}
+article > ul{
+    border-bottom: 1px solid #c2c2c2;
+    margin: 0;
+}
+article > ul:nth-child(odd){
+    background: #f9f9f9;
+}
+article > ul li:first-child{
+    width: 60px;
+    height: 60px;
+    margin: 0 10px 0 0;
+}
+article > ul li:first-child img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+article > ul li:nth-child(2),article > ul li:nth-child(3),article > ul li:nth-child(4),article > ul li:nth-child(5),article > ul li:nth-child(6){
+    width: 16%;
+    vertical-align: top;
+}
+article > ul li b{
+    display: inline-block;
+}
+article > ul li:last-child{
+    width: 3%;
+    background: url(../images/btn.png) no-repeat center;
+    background-size: 15px;
+    vertical-align: top;
+    height: 30px;
+    border-radius: 100%;
+    float: right;
+}
+article > ul li:first-child span{
+    display: inline-block;
+    margin: 5px 0 0 0;
+    font-size: 14px;
+}
+.blackBg{
+    background: #262626;
+}
+.blackClr{
+    color:#000000;
+}
+.blueClr{
+    color:#0066b3;
+}
+.active{
+    background: #0066b3;
+}
+footer {
+    width: 100%;
+    margin: 0;
+    background: #f8f8f8;
+    display: inline-block;
+}
+footer div{
+    width: 24%;
+    padding: 1% 3%;
+    display: inline-block;
+    vertical-align: top;
+}
+footer div ul {
+    margin: 0;
+    padding: 10px 0 0 0;
+}
+footer div ul li{
+    color: #0066b3;
+    display: inline-block;
+    width: 96%;
+    padding: 0;
+    margin: 1% 2%;
+    vertical-align: top;
+    height: 96%;
+}
+footer div ul li:first-child{
+    color: #9a9a9a;
+}
+footer select{
+    border-radius: 0px;
+    border: 1px solid #E2E2E2;
+    padding: 4px 25px 4px 4px;
+     -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+     background-image:
+    linear-gradient(45deg, transparent 50%, #000000 50%),
+    linear-gradient(135deg, #000000 50%, transparent 50%),
+    linear-gradient(to right, #c5c5c5, #c5c5c5);
+    background-position: calc(94%) calc(50%), calc(98%) calc(50%), 100% 0;
+    background-size: 6px 7px, 6px 7px, 20px 2.5em;
+    background-repeat: no-repeat;
+}
+footer button{
+    background: #2e4275;
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+    line-height: 15px;
+    padding: 7px;
+    vertical-align: top;
+}
+/*footer ul li img{
+    width: 80%;
+    height: 100%;
+}*/
+.deskView{
+    display: block;
+}
+.mobView{
+    display: none;
+}
+article > div:first-child div{
+    width: 49%;
+    float: left;
+}
+article > div:first-child div:first-child span{
+    margin: 0 5px 0 0;
+}
+article > div:first-child div:last-child{
+    text-align: right;
+}
+article > div:first-child div:first-child img,article > div:first-child div:last-child img{   
+    width: 12px;
+    height: 12px;
+    margin: 5px 0 5px 5px;
+}
+article > div dl{
+    margin: 0;
+    padding: 0;
+}
+article > div dl:first-child{
+    width: 15%;
+    float: left;
+}
+article > div dl:last-child{
+    width: 85%;
+    float: right;
+    text-align: right;
+}
+article > div dl:first-child span{
+    width: 30px;
+    background: #262626;
+    color: #ffffff;
+    padding: 5px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 4px;
+}
+article > div dl:first-child span:nth-child(2){
+    margin: 0 5px 0 2px;
+}
+article > div dl ul{
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0;
+    color: #ffffff;
+    border: 1px solid #f8f8f8;
+    font-size: 14px;
+}
+article > div dl ul:first-child{
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+}
+article > div dl ul:last-child{
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+div.deskView{
+    padding: 0;
+}
+
+    /* For mobile phones: */
+@media only screen and (max-width: 768px) {    
+    h3{
+        font-size: 16px;
+        padding: 3%;
+    }
+    .events header{
+        height: 55px;
+    }
+    .events header ul li{
+        font-size: x-large;
+    }
+    .events header ul li:last-child input{
+        font-size: 12px;
+        text-overflow: ellipsis;
+        line-height: 35px;
+    }
+    aside{
+        font-size: 12px;
+        padding: 5% 0;
+    }
+    article{   
+        font-size: 12px;
+    }
+    footer div{
+        border-bottom: 1px solid #e2e2e2;
+        width: 90% !important;
+        margin: 0 5%;
+    }
+    footer ul li{
+        width: 80%;
+        font-size: 12px;
+        padding: 0;
+        margin: 0% 10%;
+        display: inline-block;
+    }
+    footer select{
+        background-position: calc(93%) calc(55%), calc(96%) calc(55%), 100% 0;
+        background-size: 4px 7px, 5px 7px, 20px 2.5em;
+    }
+    .deskView{
+        display: none;
+    }
+    .mobView{
+        display: block;
+    }
+    article > ul li:first-child{
+        margin: 5px 10px 0 0;
+    }
+    article > ul li:last-child{
+        background: none;
+    }
+    article > ul div{
+        width: 70%;
+        display: block;
+        float: right;
+    }
+    article h3{
+        padding: 3%;
+    }
+    article > ul div li{
+        width: 100% !important;
+        height: 100% !important;
+    }
+    article > div dl:first-child span{
+        margin: 0 5px;
+    }
+    article div:nth-child(3){
+        width: 30%;
+        float: left;
+    }
+    article div:nth-child(3) ul{
+        margin: 0;
+    }
+    article div:nth-child(4){
+        width: 70%;
+        float: left;
+        padding: 0;
+    }
+    ul.mobView > li:first-child{
+        width: 30%;
+        height: 30%;
+        margin: 5px 0 0 0;
+    }
+    ul.dropdown-menu{
+        padding: 0;
+        margin: 0
+    }
+    .dropdown .btn{
+        font-size: 18px;
+        height: 25px;
+        line-height: 18px;
+        padding: 4px 6px 2px;
+    }
+    ul.dropdown-menu li{
+        background: #e2e2e2;
+        height: 26px;
+        padding: 5px;
+    }    
+    ul.dropdown-menu li:nth-child(odd){
+        background: #e8e8e8;
+    }
+    .dropdown-menu p{
+        display: block;
+        float: left;
+        margin: 0;
+        width: auto;
+    }
+    ul.dropdown-menu li p:last-child{
+        float: right;
+    }
+}
